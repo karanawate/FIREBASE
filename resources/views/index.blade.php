@@ -368,7 +368,8 @@ form#login-form::before {
             <div class="bts">
               <a href="#" class="fblogin social"><i class="fa fa-facebook"></i><span>Sign in with Facebook</span></a>
                <a href="#" class="twlogin social"><i class="fa fa-twitter"></i><span>Sign in with Twitter</span></a>
-              <a href="#" class="gplogin social"><i class="fa fa-google-plus"></i><span>Sign in with Google</span></a>
+              <!-- <a href="#" class="gplogin social"><i class="fa fa-google-plus"></i><span>Sign in with Google</span></a> -->
+              <button id="btnGoogle" class="gplogin social ">Sign in with Google </button>
             </div>
           </div>
           <div class="right">
@@ -413,7 +414,7 @@ form#login-form::before {
 var sighupbtn = document.getElementById('sighupbtn');
 var emailsigh = document.getElementById('useremail');
 var passsigh = document.getElementById('userpass');
-
+// ==============Login with Gmail=================================
 sighupbtn.onclick = function(){
     sighupbtn.disabled = true;
     sighupbtn.textContent = "Registring Your Account";
@@ -443,6 +444,22 @@ sighupbtn.onclick = function(){
        sighupbtn.textContent = "Sigh up";
         console.log(error);
     });
+}
+
+// ==================================Login with Google=====================================================
+
+var btnGoogle = document.getElementById('btnGoogle');
+
+btnGoogle.onclick = function (){
+
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(response){
+        console.log(response);
+    })
+    .catch(function (error){
+        console.log(error);
+    })
+
 }
 
 </script>
