@@ -366,7 +366,7 @@ form#login-form::before {
         <div class="signform">
           <div class="left"><a href="#" style="float:right;margin-right:35px;font-size: 0.9em;" class="bts-a">Don't have an account? Sign up!</a>
             <div class="bts">
-              <a href="#" class="fblogin social"><i class="fa fa-facebook"></i><span>Sign in with Facebook</span></a>
+              <button id="btnFacebook" class="fa fa-facebook fblogin social ">Sign in with Facebook </button>
                <a href="#" class="twlogin social"><i class="fa fa-twitter"></i><span>Sign in with Twitter</span></a>
               <!-- <a href="#" class="gplogin social"><i class="fa fa-google-plus"></i><span>Sign in with Google</span></a> -->
               <button id="btnGoogle" class="gplogin social ">Sign in with Google </button>
@@ -454,6 +454,21 @@ btnGoogle.onclick = function (){
 
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(response){
+        console.log(response);
+    })
+    .catch(function (error){
+        console.log(error);
+    })
+
+}
+// login with Facebook //
+
+var btnFacebook = document.getElementById('btnFacebook');
+
+btnFacebook.onclick = function (){
+  console.log("Hi");
+var facebookprovider = new firebase.auth.FacebookAuthProvider();
+firebase.auth().signInWithPopup(facebookprovider).then(function(response){
         console.log(response);
     })
     .catch(function (error){
