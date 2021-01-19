@@ -20,23 +20,27 @@ Route::get('/', function(){
     return view('index');
 });
 
-Route::post('/oauth_login', function(Request $request){
-    $user = $request->user;
-    dd($request->all());
-    $user = [
-        'email' => $user['email'],
-        'name' => $user['displayName'],
-        'phone' => $user['phoneNumber'],
-        'avatar' => $user['photoURL'],
-    ];
+Route::post('/oauth_login', 'UserController@user_insert');
+
+// Route::post('/oauth_login', function(Request $request){
+//     $user = $request->user;
+//     //dd($request->all());
+//     $user = [
+//         'email' => $user['email'],
+//         'name' => $user['displayName'],
+//         'phone' => $user['phoneNumber'],
+//         'avatar' => $user['photoURL'],
+//     ];
 
 
-    // $userFromDB = \App\Models\User::where('email', $user['email'])->first();
-    // if ($userFromDB) {
-    //     # loginn user...
-    // } else {
-    //     // register first and then lgoin
-    // }
-    // // auth()->login($userID);
-    //dd($user, $request->all());
-});
+//     $userFromDB = \App\User::where('email', $user['email'])->first();
+//     if ($userFromDB) {
+//         # loginn user...
+//         echo "welcome";
+//     } else {
+//         // register first and then lgoin
+//         echo "register first";
+//     }
+//     // // auth()->login($userID);
+//     //dd($user, $request->all());
+// });
