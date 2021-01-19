@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
     <style>
             .register-account{
         background: url(http://cdn.paper4pc.com/images/grunge-texture-wallpaper-5.jpg) no-repeat center top;
@@ -388,6 +390,7 @@ form#login-form::before {
         </div>
   </section>
  <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -450,10 +453,30 @@ sighupbtn.onclick = function(){
 
 var btnGoogle = document.getElementById('btnGoogle');
 
-btnGoogle.onclick = function (){
+btnGoogle.onclick =  function (){
 
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(response){
+    firebase.auth().signInWithPopup(provider).then(async function(response){
+      // get user object
+      const user = response.user
+      try {
+          let res = await axios.post('/oauth_login', {
+            _token: '{{ csrf_token() }}',
+            user
+          })
+        // let res = await fetch('/oauth_login', {
+        //   method: 'POST',
+        //   body: JSON.stringify({
+        //       _token: '{{ csrf_token() }}',
+        //     user
+        //   })
+        // })
+        // res = await res.json()
+        console.log({ res, user })
+      } catch (error) {
+
+      }
+
         console.log(response);
     })
     .catch(function (error){
