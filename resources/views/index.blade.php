@@ -493,8 +493,10 @@ var btnFacebook = document.getElementById('btnFacebook');
 btnFacebook.onclick = function (){
   console.log("Hi");
 var facebookprovider = new firebase.auth.FacebookAuthProvider();
-firebase.auth().signInWithPopup(facebookprovider).then(function(response){
-        console.log(response);
+firebase.auth().signInWithPopup(facebookprovider).then( async function(response){
+      FacebookUser = user.response;
+      console.log(FacebookUser);
+        //console.log(response);
     })
     .catch(function (error){
         console.log(error);

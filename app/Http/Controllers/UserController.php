@@ -15,7 +15,9 @@ class UserController extends Controller
         'phone' => $user['phoneNumber'],
         'avatar' => $user['photoURL'],
     ];
+
     $userData = User::insert($user);
+
     $userFromDB = \App\User::where('email', $user['email'])->first();
     if ($userFromDB) {
         # loginn user...
