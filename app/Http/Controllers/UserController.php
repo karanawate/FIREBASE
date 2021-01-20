@@ -15,9 +15,20 @@ class UserController extends Controller
         'phone' => $user['phoneNumber'],
         'avatar' => $user['photoURL'],
     ];
-
+try {
     $userData = User::insert($user);
-
+    return[
+        'ok' =>true,
+        'data' =>$userData,
+        'meassage' =>'Google with login User Succefully Inserted',
+    ];
+} catch (\Throwable $th) {
+    //throw $th;
+    return[
+        'ok' =>true,
+        'meassage' =>$th->getMeassage(),
+    ];
+}
     $userFromDB = \App\User::where('email', $user['email'])->first();
     if ($userFromDB) {
         # loginn user...

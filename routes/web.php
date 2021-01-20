@@ -21,6 +21,7 @@ Route::get('/', function(){
 });
 
 Route::post('/oauth_login', 'UserController@user_insert');
+
 Route::get('/register', function(){
     return view('register');
 });
