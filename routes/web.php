@@ -25,9 +25,17 @@ Route::post('/oauth_login', 'UserController@user_insert');
 Route::get('/register', function(){
     return view('register');
 });
+# location ...
 Route::get('/location', function(){
     return view('location');
 });
+
+#... social sharing
+
+    Route::get('socials', function(){
+        return view('socialshare');
+    });
+
 
 // Route::post('/oauth_login', function(Request $request){
 //     $user = $request->user;

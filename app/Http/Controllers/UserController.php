@@ -16,10 +16,10 @@ class UserController extends Controller
         'avatar' => $user['photoURL'],
     ];
 try {
-    $userData = User::insert($user);
+    $user_data = User::insert($user);
     return[
         'ok' =>true,
-        'data' =>$userData,
+        'data' =>$user_data,
         'meassage' =>'Google with login User Succefully Inserted',
     ];
 } catch (\Throwable $th) {
