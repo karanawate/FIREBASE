@@ -402,6 +402,16 @@ form#login-form::before {
 <script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   var firebaseConfig = {
+//     apiKey: "AIzaSyAVamVx3Wlv1_T9NJmOlAuTm5yrEXoG8kI",
+//     authDomain: "fir-toturial-80e7f.firebaseapp.com",
+//     projectId: "fir-toturial-80e7f",
+//     storageBucket: "fir-toturial-80e7f.appspot.com",
+//     messagingSenderId: "327117069168",
+//     appId: "1:327117069168:web:845d493bec54c280d90db5",
+//     measurementId: "G-XDR53KPG2N"
+//   };
+// new credentials
   var firebaseConfig = {
     apiKey: "AIzaSyAVamVx3Wlv1_T9NJmOlAuTm5yrEXoG8kI",
     authDomain: "fir-toturial-80e7f.firebaseapp.com",
@@ -411,6 +421,9 @@ form#login-form::before {
     appId: "1:327117069168:web:845d493bec54c280d90db5",
     measurementId: "G-XDR53KPG2N"
   };
+
+
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
@@ -489,14 +502,22 @@ btnGoogle.onclick =  function (){
 // login with Facebook //
 
 var btnFacebook = document.getElementById('btnFacebook');
-
 btnFacebook.onclick = function (){
-  console.log("Hi");
+
 var facebookprovider = new firebase.auth.FacebookAuthProvider();
 firebase.auth().signInWithPopup(facebookprovider).then( async function(response){
-      FacebookUser = user.response;
-      console.log(FacebookUser);
-        //console.log(response);
+   const user = response.user;
+
+        try {
+            let res = await axios('/oauth_login', {
+                _token : '{{ csrf_token() }}',
+                user
+            })
+            console.log(res);
+        } catch (error) {
+
+        }
+
     })
     .catch(function (error){
         console.log(error);

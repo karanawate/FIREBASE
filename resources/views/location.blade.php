@@ -68,7 +68,7 @@ body {
     <title>Place Autocomplete Address Form</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initAutocomplete&libraries=places&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQOuMuVzadVpXN0njhAAY31WS8IcS2Cig&callback=initAutocomplete&libraries=places&v=weekly"
       defer
     ></script>
     <link rel="stylesheet" type="text/css" href="./style.css" />
