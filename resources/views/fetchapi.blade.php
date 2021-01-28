@@ -6,16 +6,21 @@
     <title>Document</title>
 </head>
 <body>
+    <p>logitude: <span id="txtlongitude"></span></p>
+    <p>altitude : <span id="txtaltitude"></span></p>
     <script>
-       const fetch_api = 'https://jsonplaceholder.typicode.com/users';
+       const fetch_api = 'https://api.wheretheiss.at/v1/satellites/25544';
        apifetch()
      async function apifetch()
        {
             const response = await fetch(fetch_api);
             const data = await response.json();
-            console.log(data);
+            const {longitude, altitude} = data
+            console.log(longitude);
+            console.log(altitude);
+            document.getElementById('txtlongitude').textContent = longitude;
+            document.getElementById('txtaltitude').textContent = altitude;
        }
-
 
     </script>
 </body>
