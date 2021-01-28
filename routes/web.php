@@ -39,3 +39,7 @@ Route::get('/location', function(){
 Route::get('fetch_api', function(){
     return view('fetchapi');
 });
+
+Route::get('otpsend', function(){
+    return view('SendOtp');
+});
