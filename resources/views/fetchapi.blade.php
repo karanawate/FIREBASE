@@ -6,20 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <p>logitude: <span id="txtlongitude"></span></p>
-    <p>altitude : <span id="txtaltitude"></span></p>
+   <table class ="table table-stripped">
+        <tbody id="data">
+
+        </tbody>
+   </table>
     <script>
-       const fetch_api = 'https://api.wheretheiss.at/v1/satellites/25544';
+       const fetch_api = 'https://jsonplaceholder.typicode.com/users';
        apifetch()
      async function apifetch()
        {
             const response = await fetch(fetch_api);
             const data = await response.json();
-            const {longitude, altitude} = data
-            console.log(longitude);
-            console.log(altitude);
-            document.getElementById('txtlongitude').textContent = longitude;
-            document.getElementById('txtaltitude').textContent = altitude;
+            //console.log(data)
+             if(data.length > 0)
+             {
+                  var temp = '';
+
+                  data.forEach( function(u){
+                      temp +="<tr>";
+                      temp +="<td>"+u.id+"</td>";
+                      temp += "<td>"+u.name+"</td>";
+                      temp += "<td>"+u.username+"</td></tr>";
+                  })
+                  document.getElementById('data').innerHTML = temp;
+             }
        }
 
     </script>
