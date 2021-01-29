@@ -40,6 +40,7 @@ Route::get('fetch_api', function(){
     return view('fetchapi');
 });
 
-Route::get('otpsend', function(){
-    return view('SendOtp');
+
+Route::get('grid', function(){
+    return view('GridSystem');
 });
