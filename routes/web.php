@@ -44,3 +44,7 @@ Route::get('fetch_api', function(){
 Route::get('grid', function(){
     return view('GridSystem');
 });
+
+Route::get('blogs', function(){
+   return view('design.blog');
+});
