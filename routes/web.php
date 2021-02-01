@@ -48,3 +48,7 @@ Route::get('grid', function(){
 Route::get('blogs', function(){
    return view('design.blog');
 });
+
+Route::get('all', function(){
+   return view('promiseall');
+});
