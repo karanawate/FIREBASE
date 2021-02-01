@@ -8,6 +8,7 @@ class UserController extends Controller
 {
     public function user_insert(Request $request)
     {
+       echo "Hi";
       $user = $request->user;
     $user = [
         'email' => $user['email'],
