@@ -35,6 +35,8 @@
             apifetch()
             async function apifetch()
             {
+                const tblBody = document.getElementById('data')
+                tblBody.innerHTML = 'Loading...'
                     const response = await fetch(fetch_api);
                     const data = await response.json();
 
@@ -53,8 +55,9 @@
                             temp += "<td>"+u.username+"</td></tr>";
                         })
                         setTimeout(function(){
+                            tblBody.innerHTML = ''
                             document.getElementById('data').innerHTML = temp;
-                        },5000)
+                        },2000)
                     }
 
 
