@@ -16,6 +16,7 @@
 </head>
 <body>
     <div class="container mt-5">
+    <div id="showdata"></div>
     <h1 class="text-center mb-1">Json data</h1>
     <div class="table-responsive" >
         <table  class="table table-bordered table-hover table-striped">
@@ -36,7 +37,9 @@
             {
                     const response = await fetch(fetch_api);
                     const data = await response.json();
-                    console.log(data)
+                    // data show in screen display
+                    var getjson = JSON.stringify(data);
+                    document.getElementById('showdata').innerHTML = getjson;
                     if(data.length > 0)
                     {
                         var temp = '';
@@ -49,6 +52,8 @@
                         })
                         document.getElementById('data').innerHTML = temp;
                     }
+
+
             }
 </script>
         </div>
