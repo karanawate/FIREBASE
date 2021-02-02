@@ -52,3 +52,7 @@ Route::get('blogs', function(){
 Route::get('all', function(){
    return view('promiseall');
 });
+
+Route::get('callstack', function(){
+   return view('callstack');
+});
