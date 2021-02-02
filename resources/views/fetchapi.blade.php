@@ -37,9 +37,11 @@
             {
                     const response = await fetch(fetch_api);
                     const data = await response.json();
+
                     // data show in screen display
-                    var getjson = JSON.stringify(data);
-                    document.getElementById('showdata').innerHTML = getjson;
+                    // var getjson = JSON.stringify(data);
+                    // document.getElementById('showdata').innerHTML = getjson;
+
                     if(data.length > 0)
                     {
                         var temp = '';
@@ -50,7 +52,9 @@
                             temp += "<td>"+u.name+"</td>";
                             temp += "<td>"+u.username+"</td></tr>";
                         })
-                        document.getElementById('data').innerHTML = temp;
+                        setTimeout(function(){
+                            document.getElementById('data').innerHTML = temp;
+                        },5000)
                     }
 
 
