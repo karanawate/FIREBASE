@@ -29,5 +29,10 @@
          ajit();
 
       </script>
+      <!-- time function use in javascipt -->
+         <script>
+            var  mydate = new Date();
+            document.write(mydate);
+         </script>
 </body>
 </html>

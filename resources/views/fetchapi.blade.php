@@ -36,7 +36,7 @@
             async function apifetch()
             {
                 const tblBody = document.getElementById('data')
-                tblBody.innerHTML = 'Loading...'
+                tblBody.innerHTML = '<div class="text-center">Loading.....</div>'
                     const response = await fetch(fetch_api);
                     const data = await response.json();
 
