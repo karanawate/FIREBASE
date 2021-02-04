@@ -32,7 +32,7 @@
       <!-- time function use in javascipt -->
          <script>
             var  mydate = new Date();
-            document.write(mydate);
+            document.write(mydate.toDateString());
          </script>
 </body>
 </html>
