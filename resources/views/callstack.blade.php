@@ -10,7 +10,8 @@
    <div id="getdate_id"></div>
    <div id="getmonth_id"></div>
    <div id="getfullyear_id"></div>
-
+      <div id="gethours"></div>
+      <div id="getminite_id"></div>
       <script>
          // it show the redable format date
             var  normal_date = new Date();
@@ -32,6 +33,15 @@
    getyearr = getyear.getFullYear();
    document.getElementById('getfullyear_id').innerHTML = getyearr;
 
+// get hours & getminitus & getseconds
+   gethour = new Date();
+   gethourr = gethour.getHours();
+   document.getElementById('gethours').innerHTML = gethourr;
+
+   //get minite
+   getminite = new Date();
+   getminitee = getminite.getMinutes();
+   document.getElementById('getminite_id').innerHTML = getminitee;
          </script>
       <!-- <script>
          function ajit()
