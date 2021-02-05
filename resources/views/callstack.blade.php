@@ -10,8 +10,8 @@
    <div id="getdate_id"></div>
    <div id="getmonth_id"></div>
    <div id="getfullyear_id"></div>
-      <div id="gethours"></div>
-      <div id="getminite_id"></div>
+   <div id="gethours"></div>
+   <div id="getminite_id"></div>
       <script>
          // it show the redable format date
             var  normal_date = new Date();
@@ -42,7 +42,18 @@
    getminite = new Date();
    getminitee = getminite.getMinutes();
    document.getElementById('getminite_id').innerHTML = getminitee;
-         </script>
+
+   //good code practise for one line code
+   const foo = {name: 'tome', age:28, education:'graduate' }
+         const second = {name: 'tome', age:28, education:'graduate' }
+         const third = {name: 'tome', age:28, education:'graduate' }
+
+       const jsondata = JSON.stringify({foo, second, third});
+
+
+
+
+ </script>
       <!-- <script>
          function ajit()
          {
@@ -67,6 +78,7 @@
 
       </script>
       time function use in javascipt -->
+<!-- debug at javascript technique -->
 
 </body>
 </html>
