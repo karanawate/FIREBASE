@@ -44,13 +44,13 @@
    document.getElementById('getminite_id').innerHTML = getminitee;
 
    //good code practise for one line code
-   const foo = {name: 'tome', age:28, education:'graduate' }
+         const foo = {name: 'tome', age:28, education:'graduate' }
          const second = {name: 'tome', age:28, education:'graduate' }
          const third = {name: 'tome', age:28, education:'graduate' }
 
-       const jsondata = JSON.stringify({foo, second, third});
-
-
+      // const jsondata = JSON.stringify({foo, second, third});
+         //console.log(jsondata);
+         console.table([foo, second, third]);
 
 
  </script>
