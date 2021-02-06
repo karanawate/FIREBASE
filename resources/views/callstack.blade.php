@@ -51,14 +51,20 @@
 
          console.log()
 
-      document.getElementById('demo').innerHTML = "my name is " + foo.name + " and  age is " + foo.age + " i m complited my " +foo.education;
+      //document.getElementById('demo').innerHTML = "my name is " + foo.name + " and  age is " + foo.age + " i m complited my " +foo.education;
 
+      // template stirng
 
+      document.getElementById('demo').innerHTML = `my name is ${foo.name} and age is ${foo.age} i m complited ${foo.education}`;
       // cheque true or false ya logical operator
 
       var a = 50;
-      var b = 30;
+      var b = 40;
       console.log(a >= b);
+
+
+
+
 
 
 
