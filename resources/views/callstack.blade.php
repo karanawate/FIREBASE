@@ -12,6 +12,7 @@
    <div id="getfullyear_id"></div>
    <div id="gethours"></div>
    <div id="getminite_id"></div>
+   <div id="demo"></div>
       <script>
          // it show the redable format date
             var  normal_date = new Date();
@@ -44,13 +45,14 @@
    document.getElementById('getminite_id').innerHTML = getminitee;
 
    //good code practise for one line code
-         const foo = {name: 'tome', age:28, education:'graduate' }
+         const foo = {name: 'karan', age:25, education:'Bsc.IT' }
          const second = {name: 'tome', age:28, education:'graduate' }
          const third = {name: 'tome', age:28, education:'graduate' }
 
-      // const jsondata = JSON.stringify({foo, second, third});
-         //console.log(jsondata);
-         console.table([foo, second, third]);
+      document.getElementById('demo').innerHTML = "my name is " + foo.name + " and  age is " + foo.age + " i m complited my " +foo.education;
+
+
+
 
 
  </script>
