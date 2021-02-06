@@ -49,8 +49,16 @@
          const second = {name: 'tome', age:28, education:'graduate' }
          const third = {name: 'tome', age:28, education:'graduate' }
 
+         console.log()
+
       document.getElementById('demo').innerHTML = "my name is " + foo.name + " and  age is " + foo.age + " i m complited my " +foo.education;
 
+
+      // cheque true or false ya logical operator
+
+      var a = 50;
+      var b = 30;
+      console.log(a >= b);
 
 
 
