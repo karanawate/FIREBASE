@@ -9,7 +9,7 @@
    <script>
       const body = document.body
       const div = document.createElement("div")
-      div.textContent = "Hello karan:)"
+      div.innerHTML = "<h1>Hello Karan</h1>"
       body.append(div)
    </script>
    <!-- <div id ="normaldate_id"></div>
