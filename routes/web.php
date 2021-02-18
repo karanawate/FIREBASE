@@ -56,3 +56,6 @@ Route::get('all', function(){
 Route::get('callstack', function(){
    return view('callstack');
 });
+Route::get('promise_syntaxes', function(){
+   return view('promise_syntax');
+});
