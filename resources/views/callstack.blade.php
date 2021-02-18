@@ -6,7 +6,13 @@
    <title>Document</title>
 </head>
 <body>
-   <div id ="normaldate_id"></div>
+   <script>
+      const body = document.body
+      const div = document.createElement("div")
+      div.innerHTML = "Hello karan:)"
+      body.append(div)
+   </script>
+   <!-- <div id ="normaldate_id"></div>
    <div id="getdate_id"></div>
    <div id="getmonth_id"></div>
    <div id="getfullyear_id"></div>
@@ -70,8 +76,8 @@
 
 
  </script>
-      <!-- <script>
-         function ajit()
+      <!-- <script> -->
+         <!-- function ajit()
          {
             console.log('He is boss');
             ranjeet();
@@ -92,9 +98,10 @@
          }
          ajit();
 
-      </script>
-      time function use in javascipt -->
+      </script> -->
+
 <!-- debug at javascript technique -->
+
 
 </body>
 </html>
